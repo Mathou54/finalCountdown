@@ -1,8 +1,10 @@
 # FinalCountdown
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
+### Countdown to a given date with real time update.
 
 [Demo page](https://mathou54.github.io/finalCountdown/).
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
 ## Development server
 
