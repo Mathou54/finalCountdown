@@ -22,10 +22,13 @@ after_success:
     - npm run build:unix
 
 deploy:
-  provider: pages
-  skip-cleanup: true
-  local-dir: dist
-  github-token: $GITHUB_TOKEN
-  keep-history: true
-  on:
-    branch: master
+  - provider: pages
+    skip-cleanup: true
+    local-dir: dist
+    github-token: $GITHUB_TOKEN
+    keep-history: true
+    on:
+      branch: master
+  - provider: npm
+      email: $NPM_EMAIL
+      api_key: $NPM_TOKEN
