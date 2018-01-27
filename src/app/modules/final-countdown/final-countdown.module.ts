@@ -6,6 +6,7 @@ import { FinalCountdownComponent } from './final-countdown.component';
   imports: [
     CommonModule
   ],
-  declarations: [FinalCountdownComponent]
+  declarations: [FinalCountdownComponent],
+  exports: [FinalCountdownComponent]
 })
 export class FinalCountdownModule { }
