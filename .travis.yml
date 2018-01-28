@@ -32,3 +32,6 @@ deploy:
   - provider: npm
     email: $NPM_EMAIL
     api_key: $NPM_TOKEN
+
+after_script:
+  npm run ng -- make-this-awesome
