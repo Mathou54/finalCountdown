@@ -1,33 +1,32 @@
 # FinalCountdown
 
-### Countdown to a given date with real time update.
+Countdown to a given date with real time update.
 
 [![Build Status](https://travis-ci.org/Mathou54/finalCountdown.svg?branch=master)](https://travis-ci.org/Mathou54/finalCountdown)
 
 [Demo page](https://mathou54.github.io/finalCountdown/).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
+## Usage
 
-## Development server
+### Required parameters
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```html
+<final-countdown [endDate]="endDate"></final-countdown>
+```
+Where `endDate` is anything that can be passed to JavaScript's `new Date(endDate)`.
 
-## Code scaffolding
+### Optionals parameters
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```html
+<final-countdown 
+  [endDate]="endDate"
+  overdue="Overdue!"
+  days="days"
+  hours="h"
+  minutes="m"
+  seconds="s"
+  left="left."
+></final-countdown>
+```
+Where each optional parameter is a `string` used to compose the countdown display.
+The values here are de default one (if not specified) and can be modified.
