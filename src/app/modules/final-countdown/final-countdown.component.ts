@@ -4,7 +4,7 @@ import 'rxjs/add/observable/interval'
 import 'rxjs/add/operator/map'
 
 @Component({
-  selector: 'app-final-countdown',
+  selector: 'final-countdown',
   templateUrl: './final-countdown.component.html',
   styleUrls: ['./final-countdown.component.css']
 })
@@ -12,6 +12,24 @@ export class FinalCountdownComponent implements OnInit {
 
   @Input()
   public endDate: string;
+
+  @Input()
+  overdue: string = 'Overdue!';
+
+  @Input()
+  days: string = 'days';
+
+  @Input()
+  hours: string = 'h';
+
+  @Input()
+  minutes: string = 'm';
+
+  @Input()
+  seconds: string = 's';
+
+  @Input()
+  left: string = 'left.';
 
   public counter: Observable<string>;
 
@@ -34,7 +52,7 @@ export class FinalCountdownComponent implements OnInit {
     let secondsToGo = endDate.getTime() - actualDate.getTime();
 
     if (secondsToGo <= 0) {
-      return 'Overdue!';
+      return this.overdue;
     }
 
     let days = Math.floor(secondsToGo / (1000 * 60 * 60 * 24));
@@ -43,13 +61,13 @@ export class FinalCountdownComponent implements OnInit {
     let seconds = Math.floor((secondsToGo % (1000 * 60)) / 1000);
 
     if (days > 0) {
-      return `${days}days ${hours}h ${minutes}m ${seconds}s left.`;
+      return `${days}${this.days} ${hours}${this.hours} ${minutes}${this.minutes} ${seconds}${this.seconds} ${this.left}`;
     } else if (hours > 0) {
-      return `${hours}h ${minutes}m ${seconds}s left.`;
+      return `${hours}${this.hours} ${minutes}${this.minutes} ${seconds}${this.seconds} ${this.left}`;
     } else if (minutes > 0) {
-      return `${minutes}m ${seconds}s left.`;
+      return `${minutes}${this.minutes} ${seconds}${this.seconds} ${this.left}`;
     } else {
-      return `${seconds}s left.`;
+      return `${seconds}${this.seconds} ${this.left}`;
     }
   }
 
