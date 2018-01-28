@@ -7,16 +7,16 @@ import {FinalCountdownModule} from './modules/final-countdown/final-countdown.mo
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    FinalCountdownModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		FinalCountdownModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule {
 }
